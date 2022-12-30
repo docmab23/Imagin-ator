@@ -1,0 +1,182 @@
+<html>
+
+<head>
+    <style>
+       
+		body{
+			background-repeat: no-repeat;
+			background-size:cover
+		}
+		.heading{
+			color:rgb(34, 82, 74);
+			text-align: center;
+			align-content: center;
+			font-size: 50px;
+			font-family: fantasy;
+			color: rgb(88, 128, 122);
+			font: 1em sans-serif;
+			align-items: center;
+		
+		}
+		
+		.submit,.reset{
+		
+			border-radius: 20px;
+			color:rgb(145, 179, 174);
+			font-size: 15px;
+			text-align: center;
+			vertical-align: middle;
+			}
+		
+		.a{
+            color:rgb(145, 179, 174);
+
+        }
+		input,select{
+			width: 150px;
+		  box-sizing: border-box;
+		  border: 2px solid #ccc;
+		  border-radius: 4px;
+		  font-size: 12px;
+		  background-color: white;
+		  background-image: url('searchicon.png');
+		  background-position: 10px 10px; 
+		  background-repeat: no-repeat;
+		  padding: 12px 20px 12px 40px;
+		  transition: width 0.4s ease-in-out;
+		  text-align: center;
+		}
+		label{
+		
+			font-size:24px;
+		}
+		input[type=text], select {
+		  width: 70%;
+		  padding: 12px 20px;
+		  margin: 8px 0;
+		  display: inline-block;
+		  border: 1px solid #ccc;
+		  border-radius: 4px;
+		  box-sizing: border-box;
+		}
+		input[type=number], select {
+		  width: 100%;
+		  padding: 12px 20px;
+		  margin: 8px 0;
+		  display: inline-block;
+		  border: 1px solid #ccc;
+		  border-radius: 4px;
+		  box-sizing: border-box;
+		}
+		input[type=date], select {
+		  width: 100%;
+		  padding: 12px 20px;
+		  margin: 8px 0;
+		  display: inline-block;
+		  border: 1px solid #ccc;
+		  border-radius: 4px;
+		  box-sizing: border-box;
+		}
+		
+		/* Style the submit button */
+		input[type=submit]{
+		  width: 40%;
+		  background-color:rgb(124, 161, 156);
+		  color: white;
+		  padding: 14px 20px;
+		  margin: 8px 0;
+		  border: none;
+		  border-radius: 4px;
+		  cursor: pointer;
+		}
+		input[type=reset] {
+		  width: 40%;
+		  background-color:rgb(124, 161, 156);
+		  color: white;
+		  padding: 14px 20px;
+		  margin: 8px 0;
+		  border: none;
+		  border-radius: 4px;
+		  cursor: pointer;
+		}
+		input[type=email] {
+		  width: 40%;
+		  background-color:rgb(239, 241, 241);
+		  color: rgb(40, 134, 103);
+		  padding: 14px 20px;
+		  margin: 8px 0;
+		  border: none;
+		  border-radius: 4px;
+		  cursor: pointer;
+		}
+		input[type=password] {
+		  width: 40%;
+		  background-color:rgb(239, 241, 241);
+		  color:rgb(40, 134, 103);;
+		  padding: 14px 20px;
+		  margin: 8px 0;
+		  border: none;
+		  border-radius: 4px;
+		  cursor: pointer;
+		}
+		button {
+		  width: 30%;
+		  background-color:rgb(124, 161, 156);
+		  color: white;
+		  padding: 14px 20px;
+		  margin: 8px 0;
+		  border: none;
+		  border-radius: 4px;
+		  cursor: pointer;
+		}
+		input[type=reset] {
+		  width: 50%;
+		  background-color:rgb(124, 161, 156);
+		  color: white;
+		  padding: 14px 20px;
+		  margin: 8px 0;
+		  border: none;
+		  border-radius: 4px;
+		  cursor: pointer;
+		  text-align: center;
+		}
+		
+		/* Add a background color to the submit button on mouse-over */
+		input[type=submit]:hover {
+		  background-color: #45a049;
+		}
+
+        
+		
+					
+    </style>
+
+</head>
+
+<body>
+    <h1 id="heading" class="heading">
+         Imagin-ator v1.0 
+    </h1>
+    <h2>
+        Make images for whatever you can think of !
+    </h2>
+<form action="{{ url_for('generate') }}" method="post">
+    <label for="Prompt">
+        <i class="fas fa-user"></i>
+    </label>
+    <input type="text" name="prompt" placeholder="Think out of the box !"id="prompt" required>
+
+    <input type="submit" value="Generate">
+    <div>
+    {% if response %}
+    <div>
+        <a href="{{urls1}}">Image1 </a>
+    </div>
+        <div>
+            <a href="{{urls1}}">Image2 </a>
+    </div>
+    {% endif %}
+</div>
+</form>
+</body>
+</html>
